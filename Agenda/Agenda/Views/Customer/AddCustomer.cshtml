@@ -1,0 +1,44 @@
+﻿@model Customer
+
+@{
+    ViewData["Title"] = "AddCustomer";
+}
+
+<h1 class="text-center">Add Customer</h1>
+
+<form method="post" style="width:75%;margin:auto">
+  <div class="mb-3">
+    <label asp-for="lastname" >Nom</label>
+    <input asp-for="lastname" type="text" class="form-control">
+    <span asp-validation-for="lastname" class="text-danger"></span>
+  </div>
+  <div class="mb-3">
+    <label asp-for="firstname" >Prénom</label>
+    <input asp-for="firstname" type="text" class="form-control">
+    <span asp-validation-for="firstname" class="text-danger"></span>
+  </div>
+  <div class="mb-3">
+    <label asp-for="mail" >Adress mail</label>
+    <input asp-for="mail" type="email" class="form-control">
+    <span asp-validation-for="mail" class="text-danger"></span>
+  </div>
+  <div class="mb-3">
+    <label asp-for="phoneNumber" >Numéro de téléphone</label>
+    <input asp-for="phoneNumber" type="number" class="form-control">
+    <span asp-validation-for="phoneNumber" class="text-danger"></span>
+  </div>
+  <div class="mb-3">
+    <label asp-for="budget" >Budget</label>
+    <input asp-for="budget" type="number" class="form-control">
+    <span asp-validation-for="budget" class="text-danger"></span>
+  </div>
+  <div class="text-center">
+    <button class="btn btn-primary" style="width:100px">Ajouter</button>
+  </div>
+</form>
+
+@section Scripts{
+    @{
+        <partial name="_ValidationScriptsPartial"></partial>
+    }
+}

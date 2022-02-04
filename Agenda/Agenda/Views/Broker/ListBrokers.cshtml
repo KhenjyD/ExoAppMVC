@@ -1,0 +1,32 @@
+﻿@model IEnumerable<Broker>
+@{
+    ViewData["Title"] = "List Brokers";
+}
+<h1>List Brokers</h1>
+
+<table class="table" style="width:100%">
+    <thead>
+        <tr>
+            <th>#Id</th>
+            <th>Nom</th>
+            <th>Prénom</th>
+            <th>Information</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach( var broker in Model)
+        {
+            <tr>
+                <td> @broker.idBroker</td>
+                <td> @broker.lastname </td>
+                <td> @broker.firstname </td>
+                <td>
+                    <a class="btn btn-primary" 
+                        asp-controller="Broker" 
+                        asp-action="ProfilBroker" 
+                        asp-route-id="@broker.idBroker"> Info</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
