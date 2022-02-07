@@ -43,6 +43,9 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Customer" asp-action="ListCustomers">ListCustomers</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Appointment" asp-action="ListAppointments">ListAppointments</a>
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -53,6 +56,10 @@
             @if(TempData["success"] != null)
             {
                 <div class="alert alert-success" role="alert"> @TempData["success"] </div>
+            }
+            @if(TempData["fail"] != null)
+            {
+                <div class="alert alert-danger" role="alert"> @TempData["fail"] </div>
             }
             @RenderBody()
         </main>

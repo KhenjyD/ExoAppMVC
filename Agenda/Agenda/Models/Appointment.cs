@@ -9,7 +9,7 @@ namespace Agenda.Models
         public int idAppointment { get; set; }
 
         [Required]
-        public string dateHour { get; set; }
+        public DateTime dateHour { get; set; }
 
         [Required]
         public string subject { get; set; }

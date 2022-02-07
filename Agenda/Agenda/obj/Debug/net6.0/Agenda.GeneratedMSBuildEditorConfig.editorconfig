@@ -15,6 +15,22 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes = true
 build_property.MSBuildProjectDirectory = C:\Users\khenk\Desktop\Agenda\Agenda\Agenda
 build_property._RazorSourceGeneratorDebug = 
 
+[C:/Users/khenk/Desktop/Agenda/Agenda/Agenda/Views/Appointment/AddAppointment.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXBwb2ludG1lbnRcQWRkQXBwb2ludG1lbnQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/khenk/Desktop/Agenda/Agenda/Agenda/Views/Appointment/DeleteAppointment.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXBwb2ludG1lbnRcRGVsZXRlQXBwb2ludG1lbnQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/khenk/Desktop/Agenda/Agenda/Agenda/Views/Appointment/InfoAppointment.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXBwb2ludG1lbnRcSW5mb0FwcG9pbnRtZW50LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/khenk/Desktop/Agenda/Agenda/Agenda/Views/Appointment/ListAppointments.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXBwb2ludG1lbnRcTGlzdEFwcG9pbnRtZW50cy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/khenk/Desktop/Agenda/Agenda/Agenda/Views/Broker/AddBroker.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQnJva2VyXEFkZEJyb2tlci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 

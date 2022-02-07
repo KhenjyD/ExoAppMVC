@@ -1,0 +1,51 @@
+﻿@model Appointment
+
+@{
+    ViewData["Title"] = "AddAppointment";
+}
+
+<h1 class="text-center">Add Appointment</h1>
+
+<form method="post" style="width:75%;margin:auto">
+  <div class="mb-3">
+    <label asp-for="dateHour" >Date et Heure</label>
+    <input asp-for="dateHour" type="datetime-local" class="form-control">
+    <span asp-validation-for="dateHour" class="text-danger"></span>
+  </div>
+  <div class="mb-3">
+    <label asp-for="subject" >Sujet</label>
+    <textarea asp-for="subject" type="text" class="form-control"></textarea>
+    <span asp-validation-for="subject" class="text-danger"></span>
+  </div>
+  <div class="mb-3">
+    <label asp-for="idBroker" >Courtier</label>
+    <select asp-for="idBroker" class="form-select">
+        <option value="" selected>Choisir un client</option>
+        @foreach(var broker in ViewBag.Brokers)
+        {
+            <option value=@broker.idBroker>@broker.idBroker - @broker.lastname @broker.firstname</option>
+        }
+    </select>
+    <span asp-validation-for="idBroker" class="text-danger"></span>
+  </div>
+  <div class="mb-3">
+    <label asp-for="idCustomer" >Client</label>
+    <select asp-for="idCustomer" class="form-select">
+        <option value="" selected>Choisir un courtier</option>
+        @foreach(var customer in ViewBag.Customers)
+        {
+            <option value=@customer.idCustomer>@customer.idCustomer - @customer.lastname @customer.firstname</option>
+        }
+    </select>
+    <span asp-validation-for="idCustomer" class="text-danger"></span>
+  </div>
+  <div class="text-center">
+    <button class="btn btn-primary" style="width:100px">Ajouter</button>
+  </div>
+</form>
+
+@section Scripts{
+    @{
+        <partial name="_ValidationScriptsPartial"></partial>
+    }
+}

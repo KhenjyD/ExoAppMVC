@@ -10,7 +10,7 @@
             <th>#Id</th>
             <th>Nom</th>
             <th>Prénom</th>
-            <th>Information</th>
+            <th>Information/Ajout RDV</th>
         </tr>
     </thead>
     <tbody>
@@ -24,7 +24,11 @@
                     <a class="btn btn-primary" 
                         asp-controller="Broker" 
                         asp-action="ProfilBroker" 
-                        asp-route-id="@broker.idBroker"> Info</a>
+                        asp-route-id="@broker.idBroker">Info</a>
+                    <!--<a class="btn btn-success" 
+                        asp-controller="Appointment" 
+                        asp-action="AddAppointment" 
+                        asp-route-id="@broker.idBroker">Ajouté RDV</a>-->
                 </td>
             </tr>
         }

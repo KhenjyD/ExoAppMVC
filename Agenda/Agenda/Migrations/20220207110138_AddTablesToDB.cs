@@ -1,10 +1,11 @@
-﻿using Microsoft.EntityFrameworkCore.Migrations;
+﻿using System;
+using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
 namespace Agenda.Migrations
 {
-    public partial class AddTableToDB : Migration
+    public partial class AddTablesToDB : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -14,7 +15,7 @@ namespace Agenda.Migrations
                 {
                     idAppointment = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    dateHour = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    dateHour = table.Column<DateTime>(type: "datetime2", nullable: false),
                     subject = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     idBroker = table.Column<int>(type: "int", nullable: false),
                     idCustomer = table.Column<int>(type: "int", nullable: false)
