@@ -76,6 +76,17 @@ namespace Agenda.Controllers
                 TempData["success"] = "le rdv a bien été ajouté";
                 return RedirectToAction("ListAppointments");
             }
+            else
+            {
+                foreach(var broker in _db.Brokers)
+                {
+                    if(broker.idBroker == apt.idBroker)
+                    {
+                        TempData["fail"] = broker.lastname + " " + broker.firstname + " a déjà un rdv le " + apt.dateHour;
+                    }
+                }
+                return RedirectToAction("AddAppointment");
+            }
 
             return View();
         }
