@@ -45,7 +45,6 @@ namespace Agenda.Controllers
                 if (appointment.dateHour == apt.dateHour && appointment.idBroker == apt.idBroker)
                 {
                     correct = false;
-                    TempData["fail"] = "Ce courtier a déjà un rdv ce jour et à cette heure là.";
                 }
             }
             
@@ -75,7 +74,7 @@ namespace Agenda.Controllers
                 _db.Appointments.Add(apt);
                 _db.SaveChanges();
                 TempData["success"] = "le rdv a bien été ajouté";
-                return RedirectToAction("Index","Home");
+                return RedirectToAction("ListAppointments");
             }
 
             return View();
@@ -83,9 +82,12 @@ namespace Agenda.Controllers
 
         public IActionResult InfoAppointment(int? id)
         {
+            ViewBag.Brokers = GetAllBrokers();
+            ViewBag.Customers = GetAllCustomers();
+
             if (id == null || id == 0)
             {
-                return RedirectToAction("Index","Home");
+                return RedirectToAction("ListAppointments");
             }
 
             var appointment = _db.Appointments.Find(id);
@@ -100,6 +102,9 @@ namespace Agenda.Controllers
 
         public IActionResult DeleteAppointment(int? id)
         {
+            ViewBag.Brokers = GetAllBrokers();
+            ViewBag.Customers = GetAllCustomers();
+
             if (id == null || id == 0)
             {
                 return RedirectToAction("ListAppointments");

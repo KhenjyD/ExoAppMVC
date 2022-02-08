@@ -7,7 +7,7 @@
 <h1 class="text-center">Info Appointment</h1>
 
 <form method="post" style="width:75%;margin:auto">
-    <input asp-for="idAppointment" hidden>
+   <input asp-for="idAppointment" hidden>
   <div class="mb-3">
     <label asp-for="dateHour" >Date et Heure</label>
     <input asp-for="dateHour" type="datetime-local" class="form-control" disabled>
@@ -18,12 +18,22 @@
   </div>
   <div class="mb-3">
     <label asp-for="idBroker" >Courtier</label>
-    <input asp-for="idBroker" type="text" class="form-control" disabled>
+    <select asp-for="idBroker" class="form-select" disabled>
+        @foreach(var broker in ViewBag.Brokers)
+        {
+                <option value=@broker.idBroker>@broker.idBroker - @broker.lastname @broker.firstname</option>
+        }
+    </select>
   </div>
   <div class="mb-3">
     <label asp-for="idCustomer" >Courtier</label>
-    <input asp-for="idCustomer" type="text" class="form-control" disabled>
-    </div>
+    <select asp-for="idCustomer" class="form-select" disabled>
+        @foreach(var customer in ViewBag.Customers)
+        {
+            <option value=@customer.idCustomer>@customer.idCustomer - @customer.lastname @customer.firstname</option>
+        }
+    </select>
+  </div>
   <div class="text-center">
     <a class="btn btn-secondary" asp-controller="Appointment" asp-action="ListAppointments">Revenir à la liste des rdv</a>
   </div>

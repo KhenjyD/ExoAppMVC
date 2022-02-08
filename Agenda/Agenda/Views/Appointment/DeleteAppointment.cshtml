@@ -17,6 +17,24 @@
         <label asp-for="subject"></label>
         <input asp-for="subject" class="form-control" disabled>
     </div>
+    <div class="mb-3">
+        <label asp-for="idBroker" >Courtier</label>
+        <select asp-for="idBroker" class="form-select" disabled>
+            @foreach(var broker in ViewBag.Brokers)
+            {
+                    <option value=@broker.idBroker>@broker.idBroker - @broker.lastname @broker.firstname</option>
+            }
+        </select>
+    </div>
+    <div class="mb-3">
+        <label asp-for="idCustomer" >Courtier</label>
+        <select asp-for="idCustomer" class="form-select" disabled>
+            @foreach(var customer in ViewBag.Customers)
+            {
+                <option value=@customer.idCustomer>@customer.idCustomer - @customer.lastname @customer.firstname</option>
+            }
+        </select>
+    </div>
     <div class="text-center m-4 p-2">
         <button class="btn btn-danger" style="width:100px">Supprimer</button>
         <a class="btn btn-secondary" asp-controller="Appointment" asp-action="ListAppointments">Revenir à la liste des rdv</a>

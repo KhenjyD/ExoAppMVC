@@ -20,10 +20,20 @@
   <div class="mb-3">
     <label asp-for="idBroker" >Courtier</label>
     <select asp-for="idBroker" class="form-select">
-        <option value="" selected>Choisir un client</option>
+        <option value="" selected>Choisir un courtier</option>
         @foreach(var broker in ViewBag.Brokers)
         {
-            <option value=@broker.idBroker>@broker.idBroker - @broker.lastname @broker.firstname</option>
+                @if(@Url.ActionContext.RouteData.Values["id"] != null)
+                {
+                    @if(@broker.idBroker == int.Parse(@Url.ActionContext.RouteData.Values["id"].ToString()))
+                    {
+                        <option value=@broker.idBroker selected>@broker.idBroker - @broker.lastname @broker.firstname</option>
+                    }
+                }
+                else
+                {
+                    <option value=@broker.idBroker>@broker.idBroker - @broker.lastname @broker.firstname</option>
+                }
         }
     </select>
     <span asp-validation-for="idBroker" class="text-danger"></span>
@@ -31,7 +41,7 @@
   <div class="mb-3">
     <label asp-for="idCustomer" >Client</label>
     <select asp-for="idCustomer" class="form-select">
-        <option value="" selected>Choisir un courtier</option>
+        <option value="" selected>Choisir un clients</option>
         @foreach(var customer in ViewBag.Customers)
         {
             <option value=@customer.idCustomer>@customer.idCustomer - @customer.lastname @customer.firstname</option>
